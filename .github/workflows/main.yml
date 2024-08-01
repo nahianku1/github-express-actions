@@ -11,9 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install Dependency
+        run: npm ci
       - name: Remove Distribution
         run: npm run rm
-      - name: Build Project 
+      - name: Build Project
         run: npm run build
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
