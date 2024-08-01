@@ -10,7 +10,7 @@ jobs:
   Deploy-Production:
     defaults:
       run:
-        shell: cmd
+        shell: bash
     runs-on: self-hosted
 
     steps:
