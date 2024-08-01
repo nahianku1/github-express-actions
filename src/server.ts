@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({ origin: "*", credentials: true }));
 
 app.get("/", (req, res) => {
-  res.send(`Server Deployment Successful!`);
+  res.send(`Server deployment with new features successful!`);
 });
 
 app.listen(PORT, () => {
