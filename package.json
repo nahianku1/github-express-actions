@@ -7,7 +7,7 @@
     "start": "nodemon ./dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
-    "rm": "rmdir /S /Q dist"
+    "rm": "rm -fr ./dist"
   },
   "keywords": [],
   "author": "",
