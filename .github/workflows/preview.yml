@@ -8,13 +8,14 @@ on:
       - main
 jobs:
   Deploy-Preview:
-    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: cmd
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - name: Install Dependency
         run: npm ci
-      - name: Remove Distribution
-        run: npm run rm
       - name: Build Project
         run: npm run build
       - name: Install Vercel CLI
@@ -25,3 +26,5 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Remove Distribution
+        run: npm run rm
